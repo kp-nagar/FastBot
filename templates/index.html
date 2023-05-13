@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h4>Welcome to fast Chat</h4>
+    <p>Select Dataset file</p>
+    <form id="file_upload" enctype="multipart/form-data">
+        <label for="file">File</label>
+        <input id="file" name="file" type="file" />
+        <button type="submit" class="btn btn-info">Upload</button>
+    </form>
+</div>
+{% endblock content %}
+
+
