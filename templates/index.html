@@ -10,5 +10,23 @@
     </form>
 </div>
 {% endblock content %}
-
-
+{% block script %}
+<script>
+    $(document).ready(function(){
+        $('#file_upload').on('submit', (event) => {
+            event.preventDefault();
+            
+            const formData = new FormData($('#file_upload')[0]);
+            $.ajax({
+                url: '/uploadfile',
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: (data) => console.log(data),
+                error: (error) => console.error(error)
+            });
+        });
+    });
+</script>
+{% endblock script %}
